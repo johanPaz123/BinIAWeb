@@ -1,0 +1,206 @@
+/* 1. VARIABLES Y CONFIGURACIÓN BASE */
+:root {
+  --verde-oscuro: #004217;
+  --verde-medio: #03840a;
+  --verde-brillante: #76c043;
+  --fondo-claro: #f0f7ee; /* Blanco con un toque verdoso */
+  --texto-oscuro: #0a210f;
+  --blanco: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--fondo-claro);
+  color: var(--texto-oscuro);
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  background: linear-gradient(135deg, var(--verde-medio), var(--verde-oscuro));
+  color: var(--blanco);
+  padding: 60px 20px 130px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: clamp(3.5em, 8vw, 5.5em);
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: -2px;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+  font-size: 1.25em;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  opacity: 0.9;
+}
+#mainPage {
+  padding-top: 90px;
+  margin-top: 35px;
+}
+
+/* 3. BOTÓN DE ACCIÓN */
+.cta-button {
+  display: inline-block;
+  background-color: var(--verde-brillante);
+  color: var(--verde-oscuro);
+  padding: 18px 40px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(118, 192, 67, 0.4);
+}
+
+.cta-button:hover {
+  background-color: var(--blanco);
+  color: var(--verde-medio);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* 4. SECCIÓN DE CARACTERÍSTICAS (Las cartas blancas) */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: -80px auto 80px; /* Esto hace que floten sobre el header */
+  padding: 0 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.feature-card {
+  background-color: var(--blanco);
+  flex: 1 1 300px;
+  padding: 45px 30px;
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-bottom: 5px solid var(--verde-brillante);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+.feature-card img {
+  width: 80px;
+  margin-bottom: 20px;
+  filter: invert(36%) sepia(84%) saturate(415%) hue-rotate(69deg)
+    brightness(96%) contrast(92%);
+}
+
+.feature-card h3 {
+  margin-bottom: 15px;
+  color: var(--verde-oscuro);
+  font-size: 1.5em;
+}
+
+.feature-card p {
+  font-size: 1em;
+  color: #555;
+}
+
+/* 5. SECCIÓN DE PRODUCTO */
+.product-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px;
+  background-color: var(--blanco);
+  gap: 50px;
+}
+
+.product-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.product-info h2 {
+  color: var(--verde-oscuro);
+  font-size: 2.5em;
+  margin-bottom: 25px;
+}
+
+.product-info ul {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.product-info ul li {
+  margin-bottom: 15px;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+}
+
+.product-info ul li::before {
+  content: '✔';
+  margin-right: 15px;
+  color: var(--verde-brillante);
+  font-weight: bold;
+  background: rgba(118, 192, 67, 0.1);
+  padding: 5px 10px;
+  border-radius: 50%;
+}
+
+/* 6. FOOTER */
+footer {
+  background: var(--verde-oscuro);
+  padding: 60px 20px;
+  color: var(--blanco);
+  text-align: center;
+  margin-top: auto;
+}
+
+footer p {
+  opacity: 0.8;
+  font-size: 0.9em;
+}
+
+/* 7. RESPONSIVO */
+@media (max-width: 768px) {
+  header {
+    min-height: 60vh;
+    padding-bottom: 100px;
+  }
+
+  .features {
+    margin-top: -60px;
+  }
+
+  .product-section {
+    flex-direction: column;
+    text-align: center;
+  }
+}
